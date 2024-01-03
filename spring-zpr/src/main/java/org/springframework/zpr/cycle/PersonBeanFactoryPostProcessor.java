@@ -10,7 +10,7 @@ import org.springframework.beans.factory.config.InstantiationAwareBeanPostProces
 import org.springframework.stereotype.Component;
 
 @Data
-//@Component
+@Component
 public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 	public PersonBeanFactoryPostProcessor() {

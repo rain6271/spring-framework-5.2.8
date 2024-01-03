@@ -6,7 +6,7 @@ import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 @Data
 public class PersonBeanPostProcessor implements BeanPostProcessor {
 
