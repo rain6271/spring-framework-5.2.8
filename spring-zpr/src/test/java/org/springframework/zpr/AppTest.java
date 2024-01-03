@@ -54,5 +54,8 @@ public class AppTest {
 //            System.out.println(annotationType);
 //        }
 
-    }
+		Object orderService = context.getBean("orderService");
+
+
+	}
 }

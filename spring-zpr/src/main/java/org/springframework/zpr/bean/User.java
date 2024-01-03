@@ -1,12 +1,14 @@
 package org.springframework.zpr.bean;
 
+import org.springframework.stereotype.Component;
+
 /**
  * TODO
  *
  * @author WangYu
  * @date 2023/12/1 18:17
  */
-//@Component
+@Component
 public class User {
 
     private String name;

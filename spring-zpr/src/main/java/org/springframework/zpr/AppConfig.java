@@ -21,7 +21,7 @@ import java.util.Map;
  * @date 2023/11/29 16:23
  */
 //@PropertySource("classpath:spring.properties")
-@ComponentScan("org.springframework.zpr.cycle")
+@ComponentScan("org.springframework.zpr.bean")
 public class AppConfig {
 //    @Bean
 //    public MessageSource messageSource() {
