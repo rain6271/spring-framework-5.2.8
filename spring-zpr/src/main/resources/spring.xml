@@ -3,5 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="parentService" class="org.springframework.zpr.bean.ParentService"/>
-	<bean id="userService" class="org.springframework.zpr.bean.UserService" parent="parentService"/>
+	<bean id="propertyService" class="org.springframework.zpr.xml.PropertyService">
+		<constructor-arg value="str1"/>
+		<constructor-arg value="str2"/>
+		<constructor-arg value="str3"/>
+		<property name="property4" value="str4"/>
+		<property name="property5" value="str5"/>
+	</bean>
 </beans>
