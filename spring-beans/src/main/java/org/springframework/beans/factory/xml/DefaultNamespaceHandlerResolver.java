@@ -115,7 +115,9 @@ public class DefaultNamespaceHandlerResolver implements NamespaceHandlerResolver
 	@Override
 	@Nullable
 	public NamespaceHandler resolve(String namespaceUri) {
+		//获取spring所有JAR包里面的"META-INFO/spring.handler"文件并建立映射关系
 		Map<String, Object> handlerMappings = getHandlerMappings();
+		// 根据namespaceUri获取处理类
 		Object handlerOrClassName = handlerMappings.get(namespaceUri);
 		if (handlerOrClassName == null) {
 			return null;
@@ -132,6 +134,7 @@ public class DefaultNamespaceHandlerResolver implements NamespaceHandlerResolver
 							"] does not implement the [" + NamespaceHandler.class.getName() + "] interface");
 				}
 				NamespaceHandler namespaceHandler = (NamespaceHandler) BeanUtils.instantiateClass(handlerClass);
+				// 调用init方法完成标签元素处理类的实例化
 				namespaceHandler.init();
 				handlerMappings.put(namespaceUri, namespaceHandler);
 				return namespaceHandler;

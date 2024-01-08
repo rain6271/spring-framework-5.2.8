@@ -1,14 +1,15 @@
 package org.springframework.zpr.xml;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-public class PropertyService {
+@Component
+public class ComponentService {
 
-	public PropertyService() {
+	public ComponentService() {
 
 	}
 
-	public PropertyService(String property1, String property2, String property3) {
+	public ComponentService(String property1, String property2, String property3) {
 		this.property1 = property1;
 		this.property2 = property2;
 		this.property3 = property3;

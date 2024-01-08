@@ -16,6 +16,7 @@ import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.SimpleMetadataReaderFactory;
 import org.springframework.zpr.bean.UserService;
 import org.springframework.zpr.cycle.Person;
+import org.springframework.zpr.xml.PropertyService;
 
 import java.io.File;
 import java.io.IOException;
@@ -98,8 +99,8 @@ public class SpringTest {
 	@Test
 	public void testMerged() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		UserService userService = (UserService) context.getBean("userService");
-		System.out.println(userService);
+		PropertyService propertyService = (PropertyService) context.getBean("propertyService");
+		System.out.println(propertyService);
 
 	}
 

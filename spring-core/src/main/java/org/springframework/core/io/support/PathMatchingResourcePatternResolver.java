@@ -510,6 +510,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 				result.addAll(doFindPathMatchingJarResources(rootDirResource, rootDirUrl, subPattern));
 			}
 			else {
+				// 递归寻找文件 重点看
 				result.addAll(doFindPathMatchingFileResources(rootDirResource, subPattern));
 			}
 		}
@@ -774,6 +775,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 		}
 		fullPattern = fullPattern + StringUtils.replace(pattern, File.separator, "/");
 		Set<File> result = new LinkedHashSet<>(8);
+		// 递归寻找文件
 		doRetrieveMatchingFiles(fullPattern, rootDir, result);
 		return result;
 	}
