@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
 	   http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:component-scan base-package="org.springframework.zpr.xml" use-default-filters="false">
+	<context:component-scan base-package="org.springframework.zpr.xml,org.springframework.zpr.cycle" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
 	</context:component-scan>
 	<bean id="propertyService" class="org.springframework.zpr.xml.PropertyService">

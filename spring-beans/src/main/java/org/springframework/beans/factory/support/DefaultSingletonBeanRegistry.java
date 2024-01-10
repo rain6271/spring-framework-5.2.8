@@ -87,6 +87,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 	private final Set<String> registeredSingletons = new LinkedHashSet<>(256);
 
 	/** Names of beans that are currently in creation. */
+	// 当前正在实例化的单例对象
 	private final Set<String> singletonsCurrentlyInCreation =
 			Collections.newSetFromMap(new ConcurrentHashMap<>(16));
 
@@ -178,15 +179,22 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 	 */
 	@Nullable
 	protected Object getSingleton(String beanName, boolean allowEarlyReference) {
+		// 先从一级缓存拿
 		Object singletonObject = this.singletonObjects.get(beanName);
+		// 如果bean还在创建，还没创建完成，其实就是堆内存有了，属性还没有ID依赖注入
 		if (singletonObject == null && isSingletonCurrentlyInCreation(beanName)) {
 			synchronized (this.singletonObjects) {
+				// 从二级缓存拿
 				singletonObject = this.earlySingletonObjects.get(beanName);
+				// 如果还有拿不到，并且允许bean提前暴漏
 				if (singletonObject == null && allowEarlyReference) {
+					// 从三级缓存中拿到工厂对象
 					ObjectFactory<?> singletonFactory = this.singletonFactories.get(beanName);
 					if (singletonFactory != null) {
 						singletonObject = singletonFactory.getObject();
+						// 升级到二级缓存
 						this.earlySingletonObjects.put(beanName, singletonObject);
+						// 删除三级缓存
 						this.singletonFactories.remove(beanName);
 					}
 				}
