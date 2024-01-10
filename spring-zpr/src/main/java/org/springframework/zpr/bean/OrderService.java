@@ -1,5 +1,6 @@
 package org.springframework.zpr.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderService {
 
-    @Value("user")
-    private User user;
-
+	@Autowired
+	public OrderService(C c, D d) {
+		System.out.println(c);
+		System.out.println(d);
+	}
 }

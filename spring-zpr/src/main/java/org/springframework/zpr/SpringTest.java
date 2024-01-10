@@ -17,7 +17,7 @@ import org.springframework.core.type.classreading.SimpleMetadataReaderFactory;
 import org.springframework.zpr.bean.UserService;
 import org.springframework.zpr.cycle.Person;
 import org.springframework.zpr.xml.PropertyService;
-import org.springframework.zpr.xml.WangYuEvent;
+//import org.springframework.zpr.xml.WangYuEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -102,7 +102,7 @@ public class SpringTest {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		PropertyService propertyService = (PropertyService) context.getBean("propertyService");
 		System.out.println(propertyService);
-		context.publishEvent(new WangYuEvent(this));
+//		context.publishEvent(new WangYuEvent(this));
 
 	}
 
@@ -128,6 +128,16 @@ public class SpringTest {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		Person person = (Person) context.getBean("person");
 		System.out.println(person);
+
+	}
+
+
+	// 测试合并
+	@Test
+	public void factoryBean() {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		Object wyTest1 = context.getBean("wyTest1");
+		System.out.println(wyTest1);
 
 	}
 

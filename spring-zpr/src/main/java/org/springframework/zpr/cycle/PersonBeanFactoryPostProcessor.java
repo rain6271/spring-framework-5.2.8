@@ -7,10 +7,12 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Data
 @Component
+@Order(value = 2)
 public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 	public PersonBeanFactoryPostProcessor() {
@@ -21,7 +23,5 @@ public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 		System.out
 				.println("BeanFactoryPostProcessor调用postProcessBeanFactory方法");
-		BeanDefinition bd = beanFactory.getBeanDefinition("person");
-		bd.getPropertyValues().addPropertyValue("phone", "110");
 	}
 }

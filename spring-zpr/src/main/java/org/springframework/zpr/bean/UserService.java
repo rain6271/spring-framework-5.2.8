@@ -16,19 +16,4 @@ import javax.annotation.Resource;
 @Data
 public class UserService {
 
-	@Value("user")
-	private User user;
-
-	@Resource
-	private OrderService orderService;
-
-	private String flag;
-
-	public String getFlag() {
-		return flag;
-	}
-
-	public void setFlag(String flag) {
-		this.flag = flag;
-	}
 }

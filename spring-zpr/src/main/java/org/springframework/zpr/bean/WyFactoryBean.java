@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author WangYu
  * @date 2023/12/2 19:41
  */
-@Component
+//@Component
 public class WyFactoryBean implements FactoryBean<UserService> {
 
     @Override

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @author WangYu
  * @date 2023/12/2 19:21
  */
-@Component
+//@Component
 public class WyBeanPostProcessor implements BeanPostProcessor {
 
 

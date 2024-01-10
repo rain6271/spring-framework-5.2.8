@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.beans.PropertyDescriptor;
@@ -35,9 +36,4 @@ public class PersonInstantiationBeanPostProcessor extends InstantiationAwareBean
 		PropertyValues propertyValues = super.postProcessProperties(pvs, bean, beanName);
 		return propertyValues;
 	}
-
-//	@Override
-//	public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
-//		return super.postProcessPropertyValues(pvs, pds, bean, beanName);
-//	}
 }
