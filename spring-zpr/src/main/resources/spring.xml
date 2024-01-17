@@ -9,13 +9,4 @@
 	<context:component-scan base-package="org.springframework.zpr.bean" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
 	</context:component-scan>
-	<bean id="factoryMethodBean" class="org.springframework.zpr.factory.FactoryMethodBean"/>
-	<bean id="wyTest1" factory-bean="factoryMethodBean" factory-method="getBean"/>
-	<bean id="propertyService" class="org.springframework.zpr.xml.PropertyService">
-		<constructor-arg value="str1"/>
-		<constructor-arg value="str2"/>
-		<constructor-arg value="str3"/>
-		<property name="property4" value="str4"/>
-		<property name="property5" value="str5"/>
-	</bean>
 </beans>
