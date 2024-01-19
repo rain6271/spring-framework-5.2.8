@@ -878,7 +878,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 		for (String beanName : beanNames) {
 			//把父BeanDefinition里面的属性拿到子BeanDefinition中
 			RootBeanDefinition bd = getMergedLocalBeanDefinition(beanName);
-			//如果不是抽象的，单例的，非懒加载的就实例化
+			//如果不是抽象的，是单例的，非懒加载的就实例化
 			if (!bd.isAbstract() && bd.isSingleton() && !bd.isLazyInit()) {
 				//判断bean是否实现了FactoryBean接口，这里可以不看
 				if (isFactoryBean(beanName)) {

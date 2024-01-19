@@ -156,6 +156,7 @@ class ConstructorResolver {
 			// Take specified constructors, if any.
 			Constructor<?>[] candidates = chosenCtors;
 			if (candidates == null) {
+				// 利用JAVA反射获取构造方法
 				Class<?> beanClass = mbd.getBeanClass();
 				try {
 					candidates = (mbd.isNonPublicAccessAllowed() ?
@@ -168,6 +169,8 @@ class ConstructorResolver {
 				}
 			}
 
+			// 推断构造函数的逻辑
+			// 如果只有一个默认的构造函数， 并且没有Bean没有配置实例化时参数
 			if (candidates.length == 1 && explicitArgs == null && !mbd.hasConstructorArgumentValues()) {
 				Constructor<?> uniqueCandidate = candidates[0];
 				if (uniqueCandidate.getParameterCount() == 0) {
