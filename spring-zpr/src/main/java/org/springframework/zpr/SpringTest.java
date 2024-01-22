@@ -18,7 +18,6 @@ public class SpringTest {
 	public void testBeanDefinitionRegistry() throws IOException {
 		int i = new AppConfig().hashCode();
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		context.getBean("person");
 		Resource[] resources = context.getResources("properties.test");
 	}
 
