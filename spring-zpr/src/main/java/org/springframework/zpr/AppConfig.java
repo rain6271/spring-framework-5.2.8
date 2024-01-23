@@ -1,7 +1,10 @@
 package org.springframework.zpr;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.zpr.bean.AwareBean;
+import org.springframework.zpr.bean.ImportAwareBean;
 
 
 /**
@@ -10,8 +13,8 @@ import org.springframework.context.annotation.PropertySource;
  * @author WangYu
  * @date 2023/11/29 16:23
  */
-@PropertySource("classpath:spring.properties")
 @ComponentScan("org.springframework.zpr.bean")
+@Import(ImportAwareBean.class)
 public class AppConfig {
 
 

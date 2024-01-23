@@ -5,7 +5,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
 	@Override

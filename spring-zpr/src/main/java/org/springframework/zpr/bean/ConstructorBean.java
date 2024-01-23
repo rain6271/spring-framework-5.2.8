@@ -1,6 +1,7 @@
 package org.springframework.zpr.bean;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 public class ConstructorBean {
@@ -14,5 +15,4 @@ public class ConstructorBean {
 		this.pro1 = pro1;
 		this.pro2 = pro2;
 	}
-
 }

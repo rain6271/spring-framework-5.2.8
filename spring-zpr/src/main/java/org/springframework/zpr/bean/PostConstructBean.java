@@ -1,5 +1,6 @@
 package org.springframework.zpr.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,8 @@ import javax.annotation.PreDestroy;
 @Component
 public class PostConstructBean {
 
+	@Autowired
+	private AwareBean awareBean;
 
 	@PostConstruct
 	public void init() {

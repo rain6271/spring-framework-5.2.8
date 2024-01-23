@@ -1,6 +1,7 @@
 package org.springframework.zpr;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 
@@ -21,5 +22,11 @@ public class SpringTest {
 		Resource[] resources = context.getResources("properties.test");
 	}
 
+	@Test
+	public void testImportAware() throws IOException {
+		int i = new AppConfig().hashCode();
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		Resource[] resources = context.getResources("properties.test");
+	}
 
 }
