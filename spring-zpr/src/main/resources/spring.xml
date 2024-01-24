@@ -9,6 +9,7 @@
 	<context:component-scan base-package="org.springframework.zpr.bean" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
 	</context:component-scan>
+	<context:property-placeholder location="spring.properties"/>
 	<bean id="constructorBean" class="org.springframework.zpr.bean.ConstructorBean">
 		<constructor-arg name="pro1" value="1"/>
 		<constructor-arg name="pro2" value="2"/>
@@ -19,5 +20,9 @@
 	<bean id="factoryMethodBean" name="factoryMethodBean"
 		  class="org.springframework.zpr.bean.FactoryMethodBean"
 		  factory-bean="factoryMethodCreateBean" factory-method="getFactoryMethodBean"/>
+	<bean id="valueBean" class="org.springframework.zpr.bean.ValueBean">
+		<property name="v1" value="${v1}"/>
+		<property name="v2" value="${v2}"/>
+	</bean>
 
 </beans>
