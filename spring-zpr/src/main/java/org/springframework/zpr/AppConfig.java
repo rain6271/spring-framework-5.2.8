@@ -1,6 +1,7 @@
 package org.springframework.zpr;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.zpr.bean.AwareBean;
@@ -15,6 +16,7 @@ import org.springframework.zpr.bean.ImportAwareBean;
  */
 @ComponentScan("org.springframework.zpr.bean")
 @Import(ImportAwareBean.class)
+@EnableAspectJAutoProxy
 public class AppConfig {
 
 

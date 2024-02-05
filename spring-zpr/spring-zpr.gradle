@@ -9,4 +9,5 @@ dependencies {
     compile(project(":spring-core"))
     compile(project(":spring-beans"))
     compile(project(":spring-tx"))
+    compile(project(":spring-aspects"))
 }

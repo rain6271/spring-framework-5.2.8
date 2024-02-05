@@ -157,9 +157,9 @@ public abstract class AnnotationConfigUtils {
 				beanFactory.setAutowireCandidateResolver(new ContextAnnotationAutowireCandidateResolver());
 			}
 		}
-		// ConfigurationClassPostProcessor
-		// AutowiredAnnotationBeanPostProcessor
-		// CommonAnnotationBeanPostProcessor
+		// ConfigurationClassPostProcessor 注册
+		// AutowiredAnnotationBeanPostProcessor 注册
+		// CommonAnnotationBeanPostProcessor 注册
 
 		Set<BeanDefinitionHolder> beanDefs = new LinkedHashSet<>(8);
 

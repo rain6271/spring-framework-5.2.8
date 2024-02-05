@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
+import org.springframework.zpr.bean.aop.AopService;
+import org.springframework.zpr.bean.aop.AopServiceImpl1;
 import org.springframework.zpr.bean.factorybean.Car;
 
 import java.io.IOException;
@@ -53,6 +55,14 @@ public class SpringTest {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		Object customScopeBean = context.getBean("customScopeBean");
 		System.out.println(customScopeBean);
+
+	}
+
+	@Test
+	public void testAop() throws IOException {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		AopService aopService = (AopService) context.getBean("aopServiceImpl1");
+		aopService.aop1();
 
 	}
 }
